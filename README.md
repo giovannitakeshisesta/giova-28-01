@@ -35,6 +35,7 @@
 
 ## Cliente  
 **useFetcher** → dispara acciones
+
 **useLoaderData**: puente servidor → React
 ```js
 const { nombreTienda } = useLoaderData<typeof loader>();
