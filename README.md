@@ -14,7 +14,8 @@
 
 # Servidor  
 ### loader / action → habla con Shopify API
-**loader**
+Un **loader** se ejecuta en el servidor
+
 - autenticas
   -Verifica que la request viene de una tienda válida
   -Recupera una sesión válida
@@ -36,8 +37,10 @@
 # Cliente  
 ## useFetcher
 **useFetcher** → dispara acciones
+
 ## useLoaderData
-**useLoaderData**: puente servidor → React
+**useLoaderData** corre en el cliente
+> significa :“Dame en el cliente los datos que el loader de esta ruta ya ejecutó en el servidor.”
 ```js
 const { nombreTienda } = useLoaderData<typeof loader>();
 ```
