@@ -13,7 +13,15 @@
  
 
 ## Servidor  
- loader / action → habla con Shopify API
+### loader / action → habla con Shopify API
+LOADER
+- autenticas
+  -Verifica que la request viene de una tienda válida
+  -Recupera una sesión válida
+  -Te da un cliente Admin API ya autenticado
+- llamas a la Admin GraphQL API
+- decides qué datos llegan al componente
+
 ```js
  export async function loader({ request }: LoaderFunctionArgs) {
   const { admin } = await authenticate.admin(request);
