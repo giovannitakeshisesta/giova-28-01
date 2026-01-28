@@ -9,29 +9,38 @@
 - app.pagina_1.tsx ,app.pagina_2.tsx 
 
 
+ ---
  
- 
 
-### Servidor (loader / action)
- → habla con Shopify API
+## Servidor  
+ loader / action → habla con Shopify API
+```js
+ export async function loader({ request }: LoaderFunctionArgs) {
+  const { admin } = await authenticate.admin(request);
 
-### Cliente (useFetcher)
- → dispara acciones
+  const response = await admin.graphql(`query { shop { name } }`);
 
-### useAppBridge
+  const json = await response.json();
+  return { nombreTienda: json?.data?.shop.name };
+}
+```
+
+## Cliente  
+ useFetcher → dispara acciones
+
+## useAppBridge
  → habla con el Admin UI
- eg:open edit product
- abre el editor del producto con este ID
+ eg:abre el editor del producto con este ID:
 ```js
 shopify.intents.invoke?.("edit:shopify/Product", {
   value: fetcher.data?.product?.id,
 });
 ```
-eg: toast 
+eg: toast :
 ```js
 shopify.toast.show("Product created");
 ```
----
+ 
 ---
 
 # Shopify App Template - React Router

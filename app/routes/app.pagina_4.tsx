@@ -157,18 +157,4 @@ export default function Index() {
   );
 }
 
-// Servidor (loader / action)
-// → habla con Shopify API
-
-// Cliente (useFetcher)
-// → dispara acciones
-
-// useAppBridge
-// → habla con el Admin UI
-
-
-// useAppBridge
-// es el puente vivo entre tu app embebida y el Admin de Shopify
-// const shopify = useAppBridge();
-// 1️⃣ Mostrar un toast del Admin shopify.toast.show("Product created");
-// 2️⃣ Abrir el producto en el Admin shopify.intents.invoke?.("edit:shopify/Product",  ....
+ 
