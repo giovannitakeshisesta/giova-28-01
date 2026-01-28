@@ -7,20 +7,15 @@
 ## FICHEROS TOCADOS
 - README
 - app.tsx --> menu
-- app.pagina_1.tsx : nueva pagina
+- app.pagina_1.tsx ,app.pagina_2.tsx 
 
 
 ---
-## CREO NUEVA PAGINA: buttons and components
+### CREO NUEVA PAGINA: buttons and components
 - app/routes --> creo app.pagina_1.tsx
-Lenguaje: JavaScript
-Sintaxis: JSX
-Framework: React
-UI: 👉 Design System basado en Web Components (Custom Elements)
- 
 - app/routes --> app.tsx --> añado link al menu <s-link href="/app/pagina_1"> Buttons and components</s-link> 
 
-## CREO NUEVA PAGINA
+### CREO NUEVA PAGINA
 - app/routes --> creo app.pagina_2.tsx
 - app/routes --> app.tsx --> añado link al menu <s-link href="/app/pagina_2"> Buttons and components</s-link> 
  
