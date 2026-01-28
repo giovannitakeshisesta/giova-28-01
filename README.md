@@ -1,4 +1,9 @@
 # GIOVANNI NOTES
+- [Glosario](README_GLOSARIO.md)
+- [Product create example](README_PRODUCT_CREATE.md)
+ ---
+
+
 > - shopify app init --> app name  giova-28-01
 > - cd giova-28-01
 > - shopify app dev     --> choose shop
@@ -8,9 +13,7 @@
 - app.tsx --> menu
 - app.pagina_1.tsx ,app.pagina_2.tsx 
 
-- [Glosario](README.md)
-- [Product create example](docs/README_PRODUCT_CREATE.md)
- ---
+
 
 
 ---
