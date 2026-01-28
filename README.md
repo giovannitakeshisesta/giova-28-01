@@ -12,7 +12,7 @@
  ---
  
 
-## Servidor  
+# Servidor  
 ### loader / action → habla con Shopify API
 **loader**
 - autenticas
@@ -33,9 +33,10 @@
 }
 ```
 
-## Cliente  
+# Cliente  
+## useFetcher
 **useFetcher** → dispara acciones
-
+## useLoaderData
 **useLoaderData**: puente servidor → React
 ```js
 const { nombreTienda } = useLoaderData<typeof loader>();
