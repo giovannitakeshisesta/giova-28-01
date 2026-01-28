@@ -1,16 +1,14 @@
 # GIOVANNI NOTES
+> - shopify app init --> app name  giova-28-01
+> - cd giova-28-01
+> - shopify app dev     --> choose shop
 
->shopify app init --> app name  giova-28-01
->cd giova-28-01
->shopify app dev     --> choose shop
-
-## FICHEROS TOCADOS
+### FICHEROS TOCADOS
 - README
 - app.tsx --> menu
 - app.pagina_1.tsx ,app.pagina_2.tsx 
 
 
----
 ### CREO NUEVA PAGINA: buttons and components
 - app/routes --> creo app.pagina_1.tsx
 - app/routes --> app.tsx --> añado link al menu <s-link href="/app/pagina_1"> Buttons and components</s-link> 
@@ -19,6 +17,10 @@
 - app/routes --> creo app.pagina_2.tsx
 - app/routes --> app.tsx --> añado link al menu <s-link href="/app/pagina_2"> Buttons and components</s-link> 
  
+
+
+
+---
 ---
 
 # Shopify App Template - React Router
