@@ -35,30 +35,76 @@ Un **loader** se ejecuta en el servidor
 ```
 
 # Cliente  
+
 ## useFetcher
-**useFetcher** → dispara acciones
+
+**useFetcher** corre en el cliente.
+
+Es el botón rojo que el cliente tiene para hablar con el servidor **sin navegar**.
+
+- Permite disparar lógica de servidor bajo demanda
+- No cambia de ruta
+- No recarga la página
+
+### Uso básico
+
+```js
+const fetcher = useFetcher();
+```
+
+Esto devuelve un objeto que puede:
+
+* Disparar un **loader** (`fetcher.load`)
+* Disparar un **action** (`fetcher.submit`)
+* Exponer el estado de la request (`fetcher.state`)
+* Proporcionar los datos de respuesta (`fetcher.data`)
+
+Todo sin cambiar de ruta.
+
+### Dónde corre
+
+* Vive en el **cliente**
+* Ejecuta código en el **servidor**
+* Mantiene el resultado en el **cliente**
+
+Es literalmente un **cable entre capas**:
+el cliente pide, el servidor ejecuta, el cliente reacciona.
+
+
+
+
 
 ## useLoaderData
 **useLoaderData** corre en el cliente
-> significa :“Dame en el cliente los datos que el loader de esta ruta ya ejecutó en el servidor.”
+Significa :  en el cliente los datos que el loader de esta ruta ya ejecutó en el servidor.”
 ```js
 const { nombreTienda } = useLoaderData<typeof loader>();
 ```
 
 
 ## useAppBridge
- → habla con el Admin UI
- eg:abre el editor del producto con este ID:
+**useAppBridge** corre en el cliente
+
+Es el acceso, desde el cliente, al “sistema operativo” del Shopify Admin donde vive tu app.
+
+ eg:Abrir editores (productos, pedidos, clientes)
 ```js
 shopify.intents.invoke?.("edit:shopify/Product", {
   value: fetcher.data?.product?.id,
 });
 ```
-eg: toast :
+eg: Mostrar toasts nativos
 ```js
 shopify.toast.show("Product created");
 ```
- 
+| Cosa          | Para qué sirve              | Dónde corre |
+| ------------- | --------------------------- | ----------- |
+| loader        | datos / lógica              | servidor    |
+| action        | mutaciones                  | servidor    |
+| useLoaderData | leer datos                  | cliente     |
+| useFetcher    | disparar requests           | cliente     |
+| useAppBridge  | hablar con Shopify Admin UI | cliente     |
+
 ---
 
 # Shopify App Template - React Router
