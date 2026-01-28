@@ -10,9 +10,15 @@
 
 
  ---
- 
+| Cosa          | Para qué sirve              | Dónde corre |
+| ------------- | --------------------------- | ----------- |
+| loader        | datos / lógica              | servidor    |
+| action        | mutaciones                  | servidor    |
+| useLoaderData | leer datos                  | cliente     |
+| useFetcher    | disparar requests           | cliente     |
+| useAppBridge  | hablar con Shopify Admin UI | cliente     |
 
-# Servidor  
+
 ### loader / action → habla con Shopify API
 Un **loader** se ejecuta en el servidor
 
@@ -33,8 +39,6 @@ Un **loader** se ejecuta en el servidor
   return { nombreTienda: json?.data?.shop.name };
 }
 ```
-
-# Cliente  
 
 ## useFetcher
 
@@ -72,15 +76,13 @@ el cliente pide, el servidor ejecuta, el cliente reacciona.
 
 
 
-
-
 ## useLoaderData
 **useLoaderData** corre en el cliente
+
 Significa :  en el cliente los datos que el loader de esta ruta ya ejecutó en el servidor.”
 ```js
 const { nombreTienda } = useLoaderData<typeof loader>();
 ```
-
 
 ## useAppBridge
 **useAppBridge** corre en el cliente
@@ -97,13 +99,7 @@ eg: Mostrar toasts nativos
 ```js
 shopify.toast.show("Product created");
 ```
-| Cosa          | Para qué sirve              | Dónde corre |
-| ------------- | --------------------------- | ----------- |
-| loader        | datos / lógica              | servidor    |
-| action        | mutaciones                  | servidor    |
-| useLoaderData | leer datos                  | cliente     |
-| useFetcher    | disparar requests           | cliente     |
-| useAppBridge  | hablar con Shopify Admin UI | cliente     |
+
 
 ---
 
