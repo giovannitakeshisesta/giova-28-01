@@ -14,7 +14,7 @@
 
 ## Servidor  
 ### loader / action → habla con Shopify API
-LOADER
+**loader**
 - autenticas
   -Verifica que la request viene de una tienda válida
   -Recupera una sesión válida
@@ -34,7 +34,12 @@ LOADER
 ```
 
 ## Cliente  
- useFetcher → dispara acciones
+**useFetcher** → dispara acciones
+**useLoaderData**: puente servidor → React
+```js
+const { nombreTienda } = useLoaderData<typeof loader>();
+```
+
 
 ## useAppBridge
  → habla con el Admin UI
